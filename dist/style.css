@@ -1,0 +1,204 @@
+
+/* loading screen */
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .loading-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-screen div {
+    height: 50px;
+    width: 15px;
+    background-color: black;
+    margin: 5px;
+    border-radius: 10px;
+    animation: bar 800ms ease infinite alternate-reverse; 
+  }
+  
+  .loading-screen div:nth-child(2) {
+    animation-delay: 200ms;
+  }
+  
+  .loading-screen div:nth-child(3) {
+    animation-delay: 400ms;
+  }
+  
+  .loading-screen div:nth-child(4) {
+    animation-delay: 600ms;
+  }
+  
+  @keyframes bar {
+    from {
+      height: 50px;
+    }
+  
+    to {
+      height: 150px;
+    }
+  }
+
+ /* Login Screen  */
+
+ .login-screen{
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 90vh;
+    margin: 0;
+}
+.logoContainer{
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgb(169, 192,52);
+}
+.logoImage{
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 60vh;
+}
+
+.inputsContainer{
+    padding: 0.2vw;
+    width: 100vw;
+    background-color: rgb(169, 192,52);
+    text-align: center;
+}
+.usernameTxt{
+    padding-right: 2vw;
+    font-family: 'Signika', sans-serif;
+    font-size: 6vw;
+    color: rgb(140, 4,4)
+    
+}
+.passwordTxt{
+    padding-right: 2.4815vw;
+    padding-top: 5vw;
+    font-family: 'Signika', sans-serif;
+    font-size: 6vw;
+    color: rgb(140, 4,4);
+
+}
+
+
+.input2{
+    padding-top: 1.5vw;
+
+}
+
+.usernameInput{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.3vh solid rgb(140, 4,4, 0.4);
+    font-family: 'Signika', sans-serif;
+    font-size: 5vw;
+    background-color: rgb(169, 192,52);
+
+}
+
+.passwordInput{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.3vh solid rgb(140, 4,4, 0.4); 
+    font-family: 'Signika', sans-serif;
+    font-size: 5vw;
+    background-color: rgb(169, 192,52);
+
+}
+
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+
+    background-color: rgb(169, 192,52);
+
+}
+
+.facebookImg{
+    width: 12vw;
+
+}
+
+.instagramImg{
+    width: 14vw;
+
+}
+
+
+.singInBtn{
+    width: 100vw;
+    height: 14vh;
+    font-family: 'Signika', sans-serif;
+    font-size: 5vw;
+    border: 1px solid gray;
+    background-color: rgb(169, 192,52, 0.6);
+    color: rgb(140, 4,4);
+}
+
+.singUpBtn{
+    width: 100vw;
+    height: 14vh;
+    font-family: 'Signika', sans-serif;
+    font-size: 5vw;
+    border: 1px solid gray;
+    background-color: rgb(169, 192,52, 0.6);
+    color: rgb(140, 4,4)
+    
+}
+
+footer{
+    font-size: 1.5vw;
+} 
+
+/* Chat screen */
+
+.chat-screen{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    height: 100vh;
+}
+/* .chat-header{
+
+}
+
+.signout-btn{
+
+}
+.chat-messages{
+
+}
+.chat-input-btn-container{
+    display: flex;
+    flex-direction: row;
+
+}
+.chat-input-msg{
+
+}
+.chat-send-btn{
+
+} */
+
+
+/* Sign Up Screen */
+
+.go-back1{
+    width: 5vw;
+    height: 5vh;
+}
+
+.signUp-screen{
+    font-size: 30px;
+}
