@@ -1,5 +1,11 @@
 import $ from 'jquery';
-import { logInWithGoogle, createPersistantSession } from '../session';
+import {
+    socialMediaLogIn,
+    createPersistantSession,
+    signInEmailAndPassword,
+    providerGoogle,
+    providerFacebook
+} from '../session';
 import mountSignUpScreen from './signUpScreen';
 
 export default
@@ -10,30 +16,31 @@ export default
 
 function loginScreen() {
     let container = document.createElement('div');
-    container.id = 'login-screen';
-    container.classList.add('login-screen');
+    container.id = 'container';
     container.innerHTML = `
-    <div class='loginContainer'>
-    <div class='logoContainer'>
-        <img src='./img/logo.jpg' class='logoImage' alt='logo image'>
-    </div>
-    <div class='inputsContainer'>
-        <div class='input1'><span class='usernameTxt'> Username </span><input type='text' class='usernameInput'> </div>
-        <div class='input2'><span class='passwordTxt'> Password </span><input type='password' class='passwordInput'></div>
-    </div>
-    <div class='socialMedia'>
-        <a href='https://www.facebook.com/'>
-            <img src='./img/facebook.png' class='facebookImg' alt='facebook_logo_icon'>
+    <div id="loadingLogo"> 
+        <div class='chatTxt'> SPACE </div> 
+            </br>
+        <div class='chatTxt'> CHAT </div> 
+    </div>  
+            </br>   </br>
+    <div class="inputContainer">
+            <input type='text' class='inputs' id='usernameInput' placeholder="Nickname or Email address"> 
+            <input type='password' class='inputs' id='passwordInput' placeholder="Password">
+    </div> 
+    <div class='loginWithSMcontainer'>
+        <a>
+            <img src='./img/facebook.png' class='iconsSM'  id="facebookLogInBtn" alt='facebook_logo_icon'>
         </a>
-        <a href='#' id="google-login-btn">
-            <img src='./img/insta.png' class='instagramImg' alt='instagram_logo_icon'>
+        <a>
+            <img src='./img/google.png' class='iconsSM' id="googleLogInBtn"  alt='google_logo_icon'>
         </a>
     </div>
-    <div class='singInAndUpBtn'>
-        <button class='singInBtn'> SIGN IN </button>
-        <button class='singUpBtn'> SIGN UP </button>
+
+    <div class='btnContainer'>
+        <div class='btns' id = 'singInBtn'> SIGN IN  </div>
+        <div  class='btns' id = 'singUpBtn'> SIGN UP  </div>
     </div>
-</div>
     
  `
     return container;
@@ -41,13 +48,21 @@ function loginScreen() {
 
 
 function initLoginScreenListeners() {
-    $('#google-login-btn').on('click', function () {
-        createPersistantSession(logInWithGoogle)
+    $('#googleLogInBtn').click(function () {
+        createPersistantSession(socialMediaLogIn(providerGoogle))
     });
-    $('.singUpBtn').on('click', function () {
+    $('#singUpBtn').click(function () {
         mountSignUpScreen()
+    })
+    $('#singInBtn').click(function () {
+        let email = $('#usernameInput').val();
+        let password = $('#passwordInput').val();
+        signInEmailAndPassword(email, password)
+
+    });
+    $('#facebookLogInBtn').click(function () {
+        createPersistantSession(socialMediaLogIn(providerFacebook))
+
     })
 
 }
-
-

@@ -13,7 +13,7 @@ var config = {
 firebase.initializeApp(config);
 
 
-navigate('loading-screen');
+navigate('loading-screen')
 
 
 

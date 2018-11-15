@@ -1,7 +1,7 @@
 
 
 import $ from 'jquery';
-import {session} from '../session';
+import { session } from '../session';
 
 
 
@@ -11,16 +11,27 @@ export default
 
     setTimeout(() => {
         session();
-    }, 1);
+    }, 5000);
 }
 
 function loadingScreen() {
     let container = document.createElement('div');
-    container.id = 'loading-screen';
-    container.classList.add('loading-screen');
+    container.id = 'container';
     container.innerHTML = `
-    <img src="./img/loadingImg.png" alt="Loading_image" class="loadingImg">
-    `;
+    
+    <div id="loadingLogo"> 
+        <div class='chatTxt'> SPACE </div> 
+            </br>
+        <div class='chatTxt'> CHAT </div> 
+    </div>  
+    
+    <div id='loadingAnimation'> Loading your comfy space </div> 
+   
+
+    `
 
     return container;
+
 }
+
+

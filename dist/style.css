@@ -1,204 +1,291 @@
-
+@import url('https://fonts.googleapis.com/css?family=Codystar|Italiana|Poiret+One');
 /* loading screen */
 
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .loading-screen {
-    height: 100vh;
+    overflow: hidden;
+    margin: auto;
+    background-color: rgb(169, 192, 52, 0.3);
+    
+}
+
+#root {
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .loading-screen div {
-    height: 50px;
-    width: 15px;
-    background-color: black;
-    margin: 5px;
-    border-radius: 10px;
-    animation: bar 800ms ease infinite alternate-reverse; 
-  }
-  
-  .loading-screen div:nth-child(2) {
-    animation-delay: 200ms;
-  }
-  
-  .loading-screen div:nth-child(3) {
-    animation-delay: 400ms;
-  }
-  
-  .loading-screen div:nth-child(4) {
-    animation-delay: 600ms;
-  }
-  
-  @keyframes bar {
-    from {
-      height: 50px;
-    }
-  
-    to {
-      height: 150px;
-    }
-  }
-
- /* Login Screen  */
-
- .login-screen{
     flex-wrap: wrap;
     flex-direction: column;
-    height: 90vh;
     margin: 0;
 }
-.logoContainer{
-    flex-wrap: wrap;
-    flex-direction: column;
-    background-color: rgb(169, 192,52);
-}
-.logoImage{
-    flex-wrap: wrap;
-    width: 100vw;
-    height: 60vh;
+
+#container {
+    margin: auto;
+    margin: 0 auto;
 }
 
-.inputsContainer{
-    padding: 0.2vw;
-    width: 100vw;
-    background-color: rgb(169, 192,52);
+#loadingLogo {
+    text-align: center;
+    margin-top: 9vh;
+}
+
+.chatTxt {
+    font-family: 'Codystar', cursive;
+    font-size: 7vh;
+}
+
+#loadingAnimation {
+    position: absolute;
+    margin-left: -8vh;
+    margin-top: 12vh;
+    font-family: 'Italiana', serif;
+    font-size: 3.5vh;
+    font: bold 10em;
+    width: 18ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: type 4s steps(40, end), blink-caret 5s step-end infinite alternate-reverse;
+    -webkit-animation: type 4s steps(40, end), blink-caret 5s step-end infinite alternate-reverse;
+}
+
+@keyframes type {
+    from {
+        width: 0;
+    }
+    40% {
+        border-right: none;
+    }
+    50% {
+        color: red;
+        border-right: .1em solid black;
+    }
+    60% {
+        border-right: none;
+    }
+    70% {
+        border-right: .1em solid black;
+    }
+    90% {
+        animation-duration: 5s;
+    }
+}
+
+/* Login Screen  */
+
+.loginWithSMcontainer {
     text-align: center;
 }
-.usernameTxt{
-    padding-right: 2vw;
-    font-family: 'Signika', sans-serif;
-    font-size: 6vw;
-    color: rgb(140, 4,4)
-    
-}
-.passwordTxt{
-    padding-right: 2.4815vw;
-    padding-top: 5vw;
-    font-family: 'Signika', sans-serif;
-    font-size: 6vw;
-    color: rgb(140, 4,4);
 
+.iconsSM {
+    width: 6.5vh;
+    cursor: pointer;
+    margin: 3vh 4vh 0 4vh;
 }
 
-
-.input2{
-    padding-top: 1.5vw;
-
+.iconsSM:hover {
+    opacity: 0.7;
 }
-
-.usernameInput{
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 0.3vh solid rgb(140, 4,4, 0.4);
-    font-family: 'Signika', sans-serif;
-    font-size: 5vw;
-    background-color: rgb(169, 192,52);
-
-}
-
-.passwordInput{
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 0.3vh solid rgb(140, 4,4, 0.4); 
-    font-family: 'Signika', sans-serif;
-    font-size: 5vw;
-    background-color: rgb(169, 192,52);
-
-}
-
-.socialMedia{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-
-    background-color: rgb(169, 192,52);
-
-}
-
-.facebookImg{
-    width: 12vw;
-
-}
-
-.instagramImg{
-    width: 14vw;
-
-}
-
-
-.singInBtn{
-    width: 100vw;
-    height: 14vh;
-    font-family: 'Signika', sans-serif;
-    font-size: 5vw;
-    border: 1px solid gray;
-    background-color: rgb(169, 192,52, 0.6);
-    color: rgb(140, 4,4);
-}
-
-.singUpBtn{
-    width: 100vw;
-    height: 14vh;
-    font-family: 'Signika', sans-serif;
-    font-size: 5vw;
-    border: 1px solid gray;
-    background-color: rgb(169, 192,52, 0.6);
-    color: rgb(140, 4,4)
-    
-}
-
-footer{
-    font-size: 1.5vw;
-} 
-
-/* Chat screen */
-
-.chat-screen{
-    display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-    height: 100vh;
-}
-/* .chat-header{
-
-}
-
-.signout-btn{
-
-}
-.chat-messages{
-
-}
-.chat-input-btn-container{
-    display: flex;
-    flex-direction: row;
-
-}
-.chat-input-msg{
-
-}
-.chat-send-btn{
-
-} */
-
 
 /* Sign Up Screen */
 
-.go-back1{
-    width: 5vw;
-    height: 5vh;
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-.signUp-screen{
-    font-size: 30px;
+.inputs {
+    border: none;
+    width: 38vh;
+    height: 3.5vh;
+    padding: 0.8vw;
+    margin: 0.5vh;
+    font-family: 'Poiret+One', sans-serif;
+    font-size: 2.8vh;
+    background: rgb(250, 255, 189);
+    border: 0.1px outset gray;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    text-align: center;
+}
+
+.btns {
+    background-color: rgb(169, 192, 52, 0.6);
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px 32px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(210, 228, 120, 0.3);
+    margin: 0.6vh;
+}
+
+.btns:hover {
+    background-color: rgba(194, 218, 76, 0.9)
+}
+
+.returnBtn {
+    position: absolute;
+    background-color: rgb(169, 192, 52, 0.6);
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 2vh;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(210, 228, 120, 0.3);
+    width: 12vh;
+    height: 3.2vh;
+    text-align: center;
+    padding-top: 1vh;
+    margin-top: 3vh;
+}
+
+.returnBtn:hover {
+    background-color: rgba(194, 218, 76, 0.9);
+}
+
+/* Chat Screen */
+
+.chat-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: url('../images/background.jpg') 0 0 no-repeat;
+    background-size: cover;
+}
+
+.chat-header {
+    height: 60px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.chat-header div:nth-child(1) {
+    margin: 0 10px;
+}
+
+.signout-btn {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.signout-btn svg {
+    fill: #fff;
+}
+
+.signout-btn svg:hover {
+    fill: #E91E63;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-input-btn-container {
+    display: flex;
+}
+
+.chat-input-msg {
+    border: 1px solid #000;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 60px;
+    flex-grow: 1;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.chat-send-btn {
+    flex: 0 0 60px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-send-btn svg {
+    fill: #fff;
+}
+
+.bubble {
+    min-width: 80px;
+}
+
+.msg-bubble-left {
+    display: inline-block;
+    padding: 15px;
+    background: #fff;
+    position: relative;
+    -moz-border-radius: 0px 10px 0px 10px;
+    -webkit-border-radius: 0px 10px 0px 10px;
+    border-radius: 0px 10px 0px 10px;
+    margin-left: 10px;
+}
+
+.msg-bubble-left:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-right: 16px solid #fff;
+    border-bottom: 20px solid transparent;
+}
+
+.msg-bubble-left .msg-date-time {
+    font-size: 8px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 5px;
+}
+
+.msg-bubble-right {
+    right: 0;
+    display: inline-block;
+    padding: 15px;
+    background: #ffeb3b;
+    position: relative;
+    -moz-border-radius: 10px 0px 10px 0px;
+    -webkit-border-radius: 10px 0px 10px 0px;
+    border-radius: 10px 0px 10px 0px;
+    margin-right: 10px;
+}
+
+.msg-bubble-right:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-left: 16px solid #ffeb3b;
+    border-bottom: 20px solid transparent;
+}
+
+.msg-name {
+    margin: 0px 10px;
+    color: #fff;
+}
+
+.msg-bubble-right .msg-date-time {
+    font-size: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 5px;
 }

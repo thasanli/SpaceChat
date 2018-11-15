@@ -1,11 +1,16 @@
 import navigate from "./navigation";
 
-var provider = new firebase.auth.GoogleAuthProvider();
+export
+    let providerGoogle = new firebase.auth.GoogleAuthProvider();
+
+export
+    let providerFacebook = new firebase.auth.FacebookAuthProvider();
+
 
 // Function to login with Google
 
 export
-    function logInWithGoogle() {
+    function socialMediaLogIn(provider) {
     firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
@@ -65,13 +70,24 @@ export
 }
 
 export
-    function sign(email, password) {
+    function signUpWithEmailAndPassword(email, password) {
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        alert(errorMessage);
+    });
+}
+
+
+export
+    function signInEmailAndPassword(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
     });
-
 }
 

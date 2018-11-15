@@ -19,7 +19,7 @@ export default
             break;
 
         case 'sign-up-screen':
-        mountSignUpScreen
+            mountSignUpScreen()
             break;
 
         case 'chat-screen':
